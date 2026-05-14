@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Beneficiarios - Sistema de Comedores Populares</title>
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="#">
+                Sistema de Comedores Populares
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            Beneficiarios
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Inventario
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Reportes
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- CONTENIDO -->
+    <div class="container mt-5">
+
+        <!-- TÍTULO -->
+        <div class="mb-4">
+
+            <h2 class="fw-bold">
+                Gestión de Beneficiarios
+            </h2>
+
+            <p class="text-muted">
+                Registro y control de familias beneficiadas
+            </p>
+
+        </div>
+
+        <!-- FORMULARIO -->
+        <div class="card shadow mb-5">
+
+            <div class="card-header bg-success text-white">
+
+                Registrar Beneficiario
+
+            </div>
+
+            <div class="card-body">
+
+                <form>
+
+                    <div class="row">
+
+                        <!-- NOMBRES -->
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Nombres
+                            </label>
+
+                            <input 
+                                type="text"
+                                class="form-control"
+                                placeholder="Ingrese nombres"
+                                required
+                            >
+
+                        </div>
+
+                        <!-- APELLIDOS -->
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Apellidos
+                            </label>
+
+                            <input 
+                                type="text"
+                                class="form-control"
+                                placeholder="Ingrese apellidos"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <!-- DNI -->
+                        <div class="col-md-4 mb-3">
+
+                            <label class="form-label">
+                                DNI
+                            </label>
+
+                            <input 
+                                type="text"
+                                class="form-control"
+                                placeholder="Ingrese DNI"
+                                required
+                            >
+
+                        </div>
+
+                        <!-- TELÉFONO -->
+                        <div class="col-md-4 mb-3">
+
+                            <label class="form-label">
+                                Teléfono
+                            </label>
+
+                            <input 
+                                type="text"
+                                class="form-control"
+                                placeholder="Ingrese teléfono"
+                            >
+
+                        </div>
+
+                        <!-- EDAD -->
+                        <div class="col-md-4 mb-3">
+
+                            <label class="form-label">
+                                Edad
+                            </label>
+
+                            <input 
+                                type="number"
+                                class="form-control"
+                                placeholder="Ingrese edad"
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <!-- DIRECCIÓN -->
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Dirección
+                        </label>
+
+                        <input 
+                            type="text"
+                            class="form-control"
+                            placeholder="Ingrese dirección"
+                        >
+
+                    </div>
+
+                    <!-- BOTÓN -->
+                    <div class="d-grid">
+
+                        <button type="submit" class="btn btn-success">
+
+                            Registrar Beneficiario
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- TABLA -->
+        <div class="card shadow">
+
+            <div class="card-header bg-dark text-white">
+
+                Lista de Beneficiarios
+
+            </div>
+
+            <div class="card-body table-responsive">
+
+                <table class="table table-bordered table-hover align-middle">
+
+                    <thead class="table-success">
+
+                        <tr>
+
+                            <th>ID</th>
+                            <th>Nombres</th>
+                            <th>DNI</th>
+                            <th>Teléfono</th>
+                            <th>Dirección</th>
+                            <th>Acciones</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>1</td>
+                            <td>María Quispe</td>
+                            <td>76543210</td>
+                            <td>987654321</td>
+                            <td>Huancayo</td>
+
+                            <td>
+
+                                <button class="btn btn-warning btn-sm">
+                                    Editar
+                                </button>
+
+                                <button class="btn btn-danger btn-sm">
+                                    Eliminar
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>2</td>
+                            <td>Juan Pérez</td>
+                            <td>74125896</td>
+                            <td>912345678</td>
+                            <td>El Tambo</td>
+
+                            <td>
+
+                                <button class="btn btn-warning btn-sm">
+                                    Editar
+                                </button>
+
+                                <button class="btn btn-danger btn-sm">
+                                    Eliminar
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+
+        Sistema de Gestión de Comedores Populares © 2026
+
+    </footer>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
