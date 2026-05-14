@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,6 +11,7 @@
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -20,11 +23,16 @@
 
         <div class="container-fluid">
 
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="dashboard.html">
                 Sistema de Comedores Populares
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <button 
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu"
+            >
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -33,13 +41,13 @@
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="dashboard.html">
+                        <a class="nav-link" href="dashboard.html">
                             Inicio
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="beneficiarios.html">
+                        <a class="nav-link active" href="beneficiarios.html">
                             Beneficiarios
                         </a>
                     </li>
@@ -97,20 +105,21 @@
 
             <div class="card-body">
 
-                <form>
+                <form id="formBeneficiario">
 
                     <div class="row">
 
                         <!-- NOMBRES -->
                         <div class="col-md-6 mb-3">
 
-                            <label class="form-label">
+                            <label class="form-label fw-semibold">
                                 Nombres
                             </label>
 
                             <input 
                                 type="text"
                                 class="form-control"
+                                id="nombres"
                                 placeholder="Ingrese nombres"
                                 required
                             >
@@ -120,13 +129,14 @@
                         <!-- APELLIDOS -->
                         <div class="col-md-6 mb-3">
 
-                            <label class="form-label">
+                            <label class="form-label fw-semibold">
                                 Apellidos
                             </label>
 
                             <input 
                                 type="text"
                                 class="form-control"
+                                id="apellidos"
                                 placeholder="Ingrese apellidos"
                                 required
                             >
@@ -140,13 +150,14 @@
                         <!-- DNI -->
                         <div class="col-md-4 mb-3">
 
-                            <label class="form-label">
+                            <label class="form-label fw-semibold">
                                 DNI
                             </label>
 
                             <input 
                                 type="text"
                                 class="form-control"
+                                id="dni"
                                 placeholder="Ingrese DNI"
                                 required
                             >
@@ -156,13 +167,14 @@
                         <!-- TELÉFONO -->
                         <div class="col-md-4 mb-3">
 
-                            <label class="form-label">
+                            <label class="form-label fw-semibold">
                                 Teléfono
                             </label>
 
                             <input 
                                 type="text"
                                 class="form-control"
+                                id="telefono"
                                 placeholder="Ingrese teléfono"
                             >
 
@@ -171,13 +183,14 @@
                         <!-- EDAD -->
                         <div class="col-md-4 mb-3">
 
-                            <label class="form-label">
+                            <label class="form-label fw-semibold">
                                 Edad
                             </label>
 
                             <input 
                                 type="number"
                                 class="form-control"
+                                id="edad"
                                 placeholder="Ingrese edad"
                             >
 
@@ -188,13 +201,14 @@
                     <!-- DIRECCIÓN -->
                     <div class="mb-3">
 
-                        <label class="form-label">
+                        <label class="form-label fw-semibold">
                             Dirección
                         </label>
 
                         <input 
                             type="text"
                             class="form-control"
+                            id="direccion"
                             placeholder="Ingrese dirección"
                         >
 
@@ -203,10 +217,12 @@
                     <!-- BOTÓN -->
                     <div class="d-grid">
 
-                        <button type="submit" class="btn btn-success">
-
+                        <button 
+                            type="button"
+                            class="btn btn-success btn-lg"
+                            onclick="registrarBeneficiario()"
+                        >
                             Registrar Beneficiario
-
                         </button>
 
                     </div>
@@ -261,7 +277,10 @@
                                     Editar
                                 </button>
 
-                                <button class="btn btn-danger btn-sm">
+                                <button 
+                                    class="btn btn-danger btn-sm"
+                                    onclick="eliminarRegistro()"
+                                >
                                     Eliminar
                                 </button>
 
@@ -283,7 +302,10 @@
                                     Editar
                                 </button>
 
-                                <button class="btn btn-danger btn-sm">
+                                <button 
+                                    class="btn btn-danger btn-sm"
+                                    onclick="eliminarRegistro()"
+                                >
                                     Eliminar
                                 </button>
 
@@ -311,5 +333,9 @@
     <!-- BOOTSTRAP JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- JS -->
+    <script src="script.js"></script>
+
 </body>
+
 </html>

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,6 +11,7 @@
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -20,11 +23,16 @@
 
         <div class="container-fluid">
 
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="dashboard.html">
                 Sistema de Comedores Populares
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <button 
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu"
+            >
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -33,7 +41,7 @@
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="dashboard.html">
+                        <a class="nav-link" href="dashboard.html">
                             Inicio
                         </a>
                     </li>
@@ -45,7 +53,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="inventario.html">
+                        <a class="nav-link active" href="inventario.html">
                             Inventario
                         </a>
                     </li>
@@ -97,20 +105,21 @@
 
             <div class="card-body">
 
-                <form>
+                <form id="formInventario">
 
                     <div class="row">
 
                         <!-- PRODUCTO -->
                         <div class="col-md-6 mb-3">
 
-                            <label class="form-label">
+                            <label class="form-label fw-semibold">
                                 Nombre del Producto
                             </label>
 
                             <input 
                                 type="text"
                                 class="form-control"
+                                id="producto"
                                 placeholder="Ingrese producto"
                                 required
                             >
@@ -120,18 +129,38 @@
                         <!-- CATEGORÍA -->
                         <div class="col-md-6 mb-3">
 
-                            <label class="form-label">
+                            <label class="form-label fw-semibold">
                                 Categoría
                             </label>
 
-                            <select class="form-select">
+                            <select 
+                                class="form-select"
+                                id="categoria"
+                            >
 
-                                <option>Seleccione</option>
-                                <option>Granos</option>
-                                <option>Lácteos</option>
-                                <option>Verduras</option>
-                                <option>Frutas</option>
-                                <option>Carnes</option>
+                                <option value="">
+                                    Seleccione
+                                </option>
+
+                                <option>
+                                    Granos
+                                </option>
+
+                                <option>
+                                    Lácteos
+                                </option>
+
+                                <option>
+                                    Verduras
+                                </option>
+
+                                <option>
+                                    Frutas
+                                </option>
+
+                                <option>
+                                    Carnes
+                                </option>
 
                             </select>
 
@@ -144,13 +173,14 @@
                         <!-- STOCK -->
                         <div class="col-md-4 mb-3">
 
-                            <label class="form-label">
+                            <label class="form-label fw-semibold">
                                 Stock
                             </label>
 
                             <input 
                                 type="number"
                                 class="form-control"
+                                id="stock"
                                 placeholder="Ingrese stock"
                             >
 
@@ -159,13 +189,14 @@
                         <!-- FECHA -->
                         <div class="col-md-4 mb-3">
 
-                            <label class="form-label">
+                            <label class="form-label fw-semibold">
                                 Fecha de Ingreso
                             </label>
 
                             <input 
                                 type="date"
                                 class="form-control"
+                                id="fecha"
                             >
 
                         </div>
@@ -173,15 +204,26 @@
                         <!-- ESTADO -->
                         <div class="col-md-4 mb-3">
 
-                            <label class="form-label">
+                            <label class="form-label fw-semibold">
                                 Estado
                             </label>
 
-                            <select class="form-select">
+                            <select 
+                                class="form-select"
+                                id="estado"
+                            >
 
-                                <option>Disponible</option>
-                                <option>Stock Bajo</option>
-                                <option>Agotado</option>
+                                <option>
+                                    Disponible
+                                </option>
+
+                                <option>
+                                    Stock Bajo
+                                </option>
+
+                                <option>
+                                    Agotado
+                                </option>
 
                             </select>
 
@@ -192,10 +234,12 @@
                     <!-- BOTÓN -->
                     <div class="d-grid">
 
-                        <button type="submit" class="btn btn-success">
-
+                        <button 
+                            type="button"
+                            class="btn btn-success btn-lg"
+                            onclick="registrarProducto()"
+                        >
                             Registrar Producto
-
                         </button>
 
                     </div>
@@ -244,10 +288,13 @@
                             <td>Granos</td>
                             <td>50</td>
                             <td>14/05/2026</td>
+
                             <td>
+
                                 <span class="badge bg-success">
                                     Disponible
                                 </span>
+
                             </td>
 
                             <td>
@@ -256,7 +303,10 @@
                                     Editar
                                 </button>
 
-                                <button class="btn btn-danger btn-sm">
+                                <button 
+                                    class="btn btn-danger btn-sm"
+                                    onclick="eliminarRegistro()"
+                                >
                                     Eliminar
                                 </button>
 
@@ -271,10 +321,13 @@
                             <td>Lácteos</td>
                             <td>5</td>
                             <td>14/05/2026</td>
+
                             <td>
+
                                 <span class="badge bg-warning text-dark">
                                     Stock Bajo
                                 </span>
+
                             </td>
 
                             <td>
@@ -283,7 +336,10 @@
                                     Editar
                                 </button>
 
-                                <button class="btn btn-danger btn-sm">
+                                <button 
+                                    class="btn btn-danger btn-sm"
+                                    onclick="eliminarRegistro()"
+                                >
                                     Eliminar
                                 </button>
 
@@ -311,5 +367,9 @@
     <!-- BOOTSTRAP JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- JS -->
+    <script src="script.js"></script>
+
 </body>
+
 </html>
